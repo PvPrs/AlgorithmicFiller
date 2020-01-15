@@ -9,6 +9,9 @@
 /*   Updated: 2020/01/15 11:17:01 by dvan-boc      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "/includes/filler.h"
+
 /**
  * Struct represents a single 'player' object
  * Each object must be defined, and so must their function pointers.
@@ -20,8 +23,11 @@
 struct s_player
 {
 	int		id;
-	char	token;
-	char	*previous;
+	char	*name;
+	char	*token;
+	void	(*transform_token)(int fd)
+	void	(*get_token)(char *map)
+	void	(*set_token)(char *map)
 };
 
 /**
@@ -35,13 +41,18 @@ struct s_player create_player(int id, char *name)
 {
 	struct s_player player = {
 			.id = id,
-			.name = name;
+			.name = name,
+			.transform_token = transform_token,
+			.get_token = get_token,
+			.set_token = set_token;
+
 	};
 	return (player);
 }
 
 /**
- * @TODO: Shouldnt be loading data, might still use ??? who knows
+ * @TODO:	Shouldnt be loading data, might still use ??? who knows
+ * 			Player saving ??
  * @param player_1
  * @param player_2
  */

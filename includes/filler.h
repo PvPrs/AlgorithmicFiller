@@ -15,4 +15,7 @@
 
 struct s_player player;
 
+char	*set_token(char *map);
+char	*get_token(int fd);
+char	*transform_token(char *map);
 #endif //FILLER_FILLER_H
