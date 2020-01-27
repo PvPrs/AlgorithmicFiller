@@ -10,25 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "/includes/filler.h"
-
-/**
- * Struct represents a single 'player' object
- * Each object must be defined, and so must their function pointers.
- * @id		represents a user identifier (i.e. 'Player 1')
- * @token	represents either 'x' or 'o'
- * 			tokens must be overriden by capitals if != last piece (all others).
- * 			applied pieces must atleast override one cell of the previous piece.
- */
-struct s_player
-{
-	int		id;
-	char	*name;
-	char	*token;
-	void	(*transform_token)(int fd)
-	void	(*get_token)(char *map)
-	void	(*set_token)(char *map)
-};
+#include "filler.h"
 
 /**
  * Represents the player initialization (Object Creation).
@@ -44,19 +26,18 @@ struct s_player create_player(int id, char *name)
 			.name = name,
 			.transform_token = transform_token,
 			.get_token = get_token,
-			.set_token = set_token;
-
+			.set_token = set_token
 	};
 	return (player);
 }
 
-/**
- * @TODO:	Shouldnt be loading data, might still use ??? who knows
- * 			Player saving ??
- * @param player_1
- * @param player_2
- */
-void load_players(char *player_1, char *player_2)
-{
-
-}
+///**
+// * @TODO:	Shouldnt be loading data, might still use ??? who knows
+// * 			Player saving ??
+// * @param player_1
+// * @param player_2
+// */
+//void load_players(char *player_1, char *player_2)
+//{
+//player = crea player.settoken(player.gettoken() + 1)
+//}

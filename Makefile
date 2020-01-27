@@ -31,7 +31,7 @@ $(NAME): libft/libft.a $(OBJ)
 	@echo "something magical is about to happen..."
 	@$(CC) $(OBJ) $(DEPENDENCIES) -o $(NAME)
 
-obj/%.o: src/%.c includes/fdf.h
+obj/%.o: src/%.c includes/filler.h
 	@echo "working on object files..."
 	@mkdir -p obj
 	@$(CC) -c $(CFLAGS) $(INC) -o $@ $<

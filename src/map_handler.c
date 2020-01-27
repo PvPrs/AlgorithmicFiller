@@ -16,8 +16,10 @@
  * Prints players 'token' on every turn.
  */
 
-#include ""
-#include "/includes/filler.h"
+#include "libft.h"
+#include "filler.h"
+
+#define stdout 0
 
 /**
  * Reads file contents
@@ -25,9 +27,21 @@
  * 				@TODO: Probably reading from Standard Output. fd for: stdout = 1;
  * @return A pointer to the read map;
  */
-char	*read_map(int fd)
+char	*read_map()
 {
+	char	*map;
+	char	*line;
+	int		fd;
+	int		col;
+	int		row;
 
+	fd = stdout;
+	while (get_next_line(fd, &line))
+	{
+		if (line == )
+	}
+	map = alloc_map(map, col, row);
+	return (map);
 }
 
 /**

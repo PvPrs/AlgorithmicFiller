@@ -10,7 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "/includes/filler.h"
+#include "filler.h"
+#include "libft.h"
+#include <stdio.h>
+
+int		game_started(char *name)
+{
+	char *line;
+	struct s_player player;
+	if (get_next_line(0, &line) && line && ft_strlen(line) > 10 &&
+		!ft_strncmp(line, "$$$ exec p", 9) &&
+		(line[10] == '1' || line[10] == '2')) {
+		player = create_player(line[10] == '1' ? 1 : 2, name);
+		printf("Player: %d\n", player.id);
+		getchar();
+	}
+	return (0);
+}
 
 int		main(int argc, char **argv)
 {
@@ -21,5 +37,7 @@ int		main(int argc, char **argv)
 	{
 		return (-1);
 	}
+	game_started(argv[0]);
+	return (0);
 
 }
