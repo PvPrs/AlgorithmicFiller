@@ -10,17 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "filler.h"
-#include "libft.h"
+#include "../includes/filler.h"
+#include "../libft/includes/libft.h"
+
 /**
  * Read every given token received from the VM
  * Read the token in it's entirety including the dots.
  * @return
  */
-char	*get_token()
+char	*get_piece(char *piece)
 {
-	
-	return ("...*...*.*");
+	return (read_stdout("Piece", ' ', 5));
 }
 
 /**
@@ -38,16 +38,25 @@ char	*get_token()
  * 			 ...*.
  * 			 ...*.
  */
-int		set_token(char *map, int col, int row)
+int		set_piece(char *map, int row, int col)
 {
 	/**
 	 * @todo: if map[col + token_col][row + token_row]
 	 */
+	 while (map[row] != NULL)
+	 {
+	 	while (map[row][col] != NULL)
+	 	{
+			if (map[row + token_row] != ('.' || player->token) ||
+				map[row + token_row][col + token_col] != ('.' || token))
+				return (-1);
+			col++;
+		}
+	 	row++;
+	 }
 	 map = NULL;
 	 col = 1;
 	 row = 2;
-//	if (player)
-//		map[col][row] = 'x';
 	return (0);
 }
 
@@ -58,7 +67,7 @@ int		set_token(char *map, int col, int row)
  * @param map
  * @return
  */
-char	*transform_token(char *map)
+char	*transform_piece(char *map)
 {
 	map = NULL;
 	return (NULL);

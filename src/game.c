@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "filler.h"
+#include "../includes/filler.h"
 
 /**
  * Represents the player initialization (Object Creation).
@@ -19,25 +19,18 @@
  * @param id User ID
  * @param name User NAME
  */
-struct s_player create_player(int id, char *name)
+void	init_game(int id)
 {
-	struct s_player player = {
+	struct s_vars vars = {
 			.id = id,
-			.name = name,
-			.transform_token = transform_token,
-			.get_token = get_token,
-			.set_token = set_token
+			.map = read_stdout("Plateau", ' ', 8),
+			.piece = read_stdout("Piece", ' ', 5),
+			.token = (id == 1 ? 'x' : 'o');
 	};
-	return (player);
+	return (vars);
 }
 
-///**
-// * @TODO:	Shouldnt be loading data, might still use ??? who knows
-// * 			Player saving ??
-// * @param player_1
-// * @param player_2
-// */
-//void load_players(char *player_1, char *player_2)
-//{
-//player = crea player.settoken(player.gettoken() + 1)
-//}
+int		event_listener
+{
+
+		};

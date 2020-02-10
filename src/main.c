@@ -10,19 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "filler.h"
-#include "libft.h"
+#include "../includes/filler.h"
+#include "../libft/includes/libft.h"
 #include <stdio.h>
 
 int		game_started(char *name)
 {
 	char *line;
-	struct s_player player;
 	if (get_next_line(0, &line) && line && ft_strlen(line) > 10 &&
-		!ft_strncmp(line, "$$$ exec p", 9) &&
-		(line[10] == '1' || line[10] == '2')) {
-		player = create_player(line[10] == '1' ? 1 : 2, name);
-		printf("Player: %d\n", player.id);
+		!ft_strncmp(line, "$$$ exec p", 9) && (line[10] == '1' || line[10] == '2'))
+	{
+		init_game(line[10] == '1' ? 1 : 2);
 		getchar();
 	}
 	return (0);

@@ -21,19 +21,17 @@
  * 			tokens must be overriden by capitals if != last piece (all others).
  * 			applied pieces must atleast override one cell of the previous piece.
  */
-struct s_player
+struct s_vars
 {
 	int		id;
-	int		points;
-	char	*name;
-	char	*token;
-	char	*(*transform_token)(char *map);
-	char 	*(*get_token)(int fd);
-	int		(*set_token)(char *map, int col, int row);
+	char	token;
+	char	*piece;
+	char	*map;
 };
 
-int		set_token(char *map, int col, int row);
-char	*get_token(int fd);
-char	*transform_token(char *map);
-struct s_player create_player(int id, char *name);
+int		set_piece(char *map, int col, int row);
+char	*get_piece(char *piece);
+char	*transform_piece(char *map);
+char	*read_stdout(char *identifier, char delimiter, int len);
+void	init_game(int id);
 #endif //FILLER_FILLER_H
