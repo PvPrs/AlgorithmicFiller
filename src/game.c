@@ -25,12 +25,13 @@ void	init_game(int id)
 			.id = id,
 			.map = read_stdout("Plateau", ' ', 8),
 			.piece = read_stdout("Piece", ' ', 5),
-			.token = (id == 1 ? 'x' : 'o');
+			.token = (id == 1 ? 'o' : 'x');
 	};
 	return (vars);
 }
 
 int		event_listener
 {
+	if (map/)
 
-		};
+};
