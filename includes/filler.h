@@ -13,25 +13,11 @@
 #ifndef FILLER_FILLER_H
 #define FILLER_FILLER_H
 
-/**
- * Struct represents a single 'player' object
- * Each object must be defined, and so must their function pointers.
- * @id		represents a user identifier (i.e. 'Player 1')
- * @token	represents either 'x' or 'o'
- * 			tokens must be overriden by capitals if != last piece (all others).
- * 			applied pieces must atleast override one cell of the previous piece.
- */
-struct s_vars
-{
-	int		id;
-	char	token;
-	char	*piece;
-	char	*map;
-};
-
-int		set_piece(char *map, int col, int row);
-char	*get_piece(char *piece);
-char	*transform_piece(char *map);
-char	*read_stdout(char *identifier, char delimiter, int len);
-void	init_game(int id);
+int					set_piece(char *, int, int);
+char				*get_piece(char *);
+char				*get_map(char *);
+char				*transform_piece(char *);
+void				init_game(int);
+struct s_coords		input_locator(struct s_vars *);
+int					event_listener(struct s_vars *);
 #endif //FILLER_FILLER_H

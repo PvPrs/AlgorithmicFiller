@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../includes/filler.h"
+#include "../includes/player.h"
 
 /**
  * Represents the player initialization (Object Creation).
@@ -30,8 +31,17 @@ void	init_game(int id)
 	return (vars);
 }
 
-int		event_listener
+/**
+ * An infinite loop whilst the game is running.
+ * @param vars
+ * @return
+ */
+int		event_listener(struct s_vars *vars)
 {
-	if (map/)
-
+	while (1)
+	{
+		get_map(vars->map);
+		get_piece(vars->piece);
+		set_piece(vars, input_locator(vars));
+	}
 };

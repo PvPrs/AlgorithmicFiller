@@ -14,14 +14,13 @@
 #include "../libft/includes/libft.h"
 #include <stdio.h>
 
-int		game_started(char *name)
+static int		game_started(char *name)
 {
 	char *line;
 	if (get_next_line(0, &line) && line && ft_strlen(line) > 10 &&
 		!ft_strncmp(line, "$$$ exec p", 9) && (line[10] == '1' || line[10] == '2'))
 	{
-		init_game(line[10] == '1' ? 1 : 2);
-		getchar();
+		event_listener(init_game(line[10] == '1' ? 1 : 2));
 	}
 	return (0);
 }
@@ -32,9 +31,7 @@ int		main(int argc, char **argv)
 
 	fd = 0;
 	if (argc != 3)
-	{
 		return (-1);
-	}
 	game_started(argv[0]);
 	return (0);
 
