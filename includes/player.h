@@ -20,20 +20,27 @@
 ** @token	represents either 'x' or 'o'
 ** 			tokens must be overriden by capitals if != last piece (all others).
 ** 			applied pieces must atleast override one cell of the previous piece.
+** @BitField_Explained:
+ * 	int id : 2;
+** 		is an integer type of bit size 2.
+** 	unsigned int x : 4,
+** 				 y : 4;
+** 		splits a bit field into two 4 bit fields.
+**
 */
 
 struct s_vars
 {
-	int		id;
-	char	token;
-	char	*piece;
-	char	*map;
+	unsigned int	id : 2;
+	char			token;
+	char			*piece;
+	char			*map;
 };
 
 struct	s_coords
 {
-	int x;
-	int y;
+	unsigned int 	x : 4,
+				 	y : 4;
 };
 
 #endif //FILLER_PLAYER_H

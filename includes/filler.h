@@ -20,4 +20,5 @@ char				*transform_piece(char *);
 void				init_game(int);
 struct s_coords		input_locator(struct s_vars *);
 int					event_listener(struct s_vars *);
+
 #endif //FILLER_FILLER_H

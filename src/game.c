@@ -12,6 +12,7 @@
 
 #include "../includes/filler.h"
 #include "../includes/player.h"
+#include "../libft/includes/libft.h"
 
 /**
  * Represents the player initialization (Object Creation).
@@ -28,6 +29,7 @@ void	init_game(int id)
 			.piece = read_stdout("Piece", ' ', 5),
 			.token = (id == 1 ? 'o' : 'x');
 	};
+	dprintf(1, "%d\n", sizeof(vars));
 	return (vars);
 }
 
