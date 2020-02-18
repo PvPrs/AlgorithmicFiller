@@ -29,18 +29,27 @@
 **
 */
 
-struct s_vars
+struct s_map
 {
-	unsigned int	id : 2;
-	char			token;
-	char			*piece;
-	char			*map;
+	unsigned int	x : 4,
+					y : 4;
+	char			*map[x][y];
 };
 
 struct	s_coords
 {
-	unsigned int 	x : 4,
-				 	y : 4;
+	unsigned int	x : 4,
+					y : 4;
 };
+
+struct s_vars
+{
+	unsigned int	id : 2;
+	char			token;
+	struct s_map	piece;
+	struct s_map	map;
+};
+
+
 
 #endif //FILLER_PLAYER_H

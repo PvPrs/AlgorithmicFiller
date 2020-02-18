@@ -29,32 +29,10 @@
  * 			 ...*.
  * 			 ...*.
  */
-int				set_piece(struct s_vars *vars, struct s_coords coords)
+int				set_piece(struct s_vars *vars, struct s_coords *coords)
 {
-	int index;
-
-	index = 0;
-	ft_strcpy(vars->map[x][y], vars->piece);
-//	while (vars->map[x][y] != NULL)
-//	 {
-//	 	while (vars->map[x][y] != NULL)
-//	 	{
-//	 		while (vars->piece[index] != NULL)
-//			{
-//	 			if (vars->piece[index])
-//					vars->piece++;
-//			}
-//			if (vars->map[x + token_x][y + token_y] == ('.' || token))
-//				return (-1);
-//			else {
-//				vars->map[row]
-//			}
-//			col++;
-//		}
-//	 	row++;
-//	 }
-//	 map = NULL;
-	return (0);
+	ft_strcpy(vars->map[coords->x][coords->y], vars->piece);
+	return (0;
 }
 
 /**
@@ -90,7 +68,7 @@ struct s_coords	input_locator(struct s_vars *vars)
 			while (vars->piece[token_x][token_y])
 		}
 	}
-	return (coords)
+	return (coords);
 }
 
 /**

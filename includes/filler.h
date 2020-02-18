@@ -13,7 +13,10 @@
 #ifndef FILLER_FILLER_H
 #define FILLER_FILLER_H
 
-int					set_piece(char *, int, int);
+struct              s_coords;
+struct              s_vars;
+
+int					set_piece(struct s_vars *);
 char				*get_piece(char *);
 char				*get_map(char *);
 char				*transform_piece(char *);

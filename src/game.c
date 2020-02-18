@@ -25,8 +25,8 @@ void	init_game(int id)
 {
 	struct s_vars vars = {
 			.id = id,
-			.map = read_stdout("Plateau", ' ', 8),
-			.piece = read_stdout("Piece", ' ', 5),
+			.map = &read_stdout("Plateau", ' ', 8),
+			.piece = &read_stdout("Piece", ' ', 5),
 			.token = (id == 1 ? 'o' : 'x');
 	};
 	dprintf(1, "%d\n", sizeof(vars));
