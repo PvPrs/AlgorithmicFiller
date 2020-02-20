@@ -14,7 +14,7 @@
 #include "../libft/includes/libft.h"
 #include <stdio.h>
 
-static int		game_started(char *name)
+static int		game_started()
 {
 	char *line;
 	if (get_next_line(0, &line) && line && ft_strlen(line) > 10 &&
@@ -25,14 +25,9 @@ static int		game_started(char *name)
 	return (0);
 }
 
-int		main(int argc, char **argv)
+int		main()
 {
-	int fd;
-
-	fd = 0;
-	if (argc != 3)
-		return (-1);
-	game_started(argv[0]);
+	game_started();
 	return (0);
 
 }

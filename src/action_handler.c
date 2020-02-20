@@ -31,8 +31,10 @@
  */
 int				set_piece(struct s_vars *vars, struct s_coords *coords)
 {
-	ft_strcpy(vars->map[coords->x][coords->y], vars->piece);
-	return (0;
+	if (vars != NULL || coords != NULL)
+		return (1);
+	//ft_strcpy(vars->map[coords->x][coords->y], vars->piece);
+	return (0);
 }
 
 /**
@@ -44,30 +46,40 @@ int				set_piece(struct s_vars *vars, struct s_coords *coords)
 ** @param piece
 ** @return
 */
-struct s_coords	input_locator(struct s_vars *vars)
+struct s_coords	*input_locator(struct s_vars *vars)
 {
-	struct s_coords	coords;
-	int				overlaps;
-	int				x, y, token_x, token_y;
-
-	overlaps = 0;
-	x, y, token_x, token_y = 0;
-	while (vars->map[x] != NULL)
+	if (vars != NULL)
 	{
-		while (vars->map[x][y] != NULL)
-		{
-			if (vars->map[x][y] == ('.' || vars->token))
-
-		}
 
 	}
-	while (vars->map[x][y] != NULL)
-	{
-		while (vars->map[x][y] != NULL)
-		{
-			while (vars->piece[token_x][token_y])
-		}
-	}
+	struct s_coords *coords;
+
+	coords = malloc(sizeof(struct s_coords));
+//	unsigned int	overlaps;
+//	unsigned int	x,
+//					y,
+//					token_x,
+//					token_y4;
+//
+//	overlaps = 0;
+//	x, y = 0;
+//	token_x, token_y = 0;
+//	while (vars->map[x] != NULL)
+//	{
+//		while (vars->map[x][y] != NULL)
+//		{
+//			if (vars->map[x][y] == ('.' || vars->token))
+//
+//		}
+//
+//	}
+//	while (vars->map[x][y] != NULL)
+//	{
+//		while (vars->map[x][y] != NULL)
+//		{
+//			while (vars->piece[token_x][token_y])
+//		}
+//	}
 	return (coords);
 }
 

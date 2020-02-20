@@ -33,7 +33,7 @@ struct s_map
 {
 	unsigned int	x : 4,
 					y : 4;
-	char			*map[x][y];
+	char			*map;
 };
 
 struct	s_coords

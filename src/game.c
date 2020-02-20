@@ -13,23 +13,31 @@
 #include "../includes/filler.h"
 #include "../includes/player.h"
 #include "../libft/includes/libft.h"
+#include <stdio.h>
 
 /**
- * Represents the player initialization (Object Creation).
- * The function allowed the object should be initialized by
- * the objects function pointers.
- * @param id User ID
- * @param name User NAME
- */
-void	init_game(int id)
+** Represents the player initialization (Object Creation).
+** The function allowed the object should be initialized by
+** the objects function pointers.
+** @param id User ID
+** @param name User NAME
+** @Designated_initializers is only allowed on declaration, Refer to:
+** @Compound_Literals initialize a pointer
+** to understand the below syntax:
+** https://en.wikipedia.org/wiki/C_syntax#Compound_literals
+*/
+struct s_vars	*init_game(int id)
 {
-	struct s_vars vars = {
-			.id = id,
-			.map = &read_stdout("Plateau", ' ', 8),
-			.piece = &read_stdout("Piece", ' ', 5),
-			.token = (id == 1 ? 'o' : 'x');
+	struct s_vars *vars;
+	vars = malloc(sizeof(struct s_vars));
+	*vars = (struct s_vars) {
+		.id = id,
+		.map = {0},
+		.piece = {0},
+		.token = (id == 1 ? 'o' : 'x')
 	};
-	dprintf(1, "%d\n", sizeof(vars));
+	printf("%zu\n", sizeof(vars));
+	//dprintf(1, "%d\n", sizeof(vars));
 	return (vars);
 }
 
@@ -42,8 +50,8 @@ int		event_listener(struct s_vars *vars)
 {
 	while (1)
 	{
-		get_map(vars->map);
-		get_piece(vars->piece);
+		get_map(&vars->map);
+		get_piece(&vars->piece);
 		set_piece(vars, input_locator(vars));
 	}
 };
