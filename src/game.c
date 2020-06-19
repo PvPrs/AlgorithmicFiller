@@ -16,13 +16,12 @@
 #include <stdio.h>
 
 /**
-** Represents the player initialization (Object Creation).
-** The function allowed the object should be initialized by
-** the objects function pointers.
-** @param id User ID
-** @param name User NAME
-** @Designated_initializers is only allowed on declaration, Refer to:
-** @Compound_Literals initialize a pointer
+** Initializes and allocates the struct variables
+** required for initialization.
+** @param id PlayerID(1:2)
+** @Designated_initializer Designated initializers allow members to be initialized by name,
+ * in any order, and without explicitly providing the preceding values.
+** @Compound_Literals Allows you to assign or pass value's by typecasting, required for pointers.
 ** to understand the below syntax:
 ** https://en.wikipedia.org/wiki/C_syntax#Compound_literals
 */
@@ -32,17 +31,15 @@ struct s_vars	*init_game(int id)
 	vars = malloc(sizeof(struct s_vars));
 	*vars = (struct s_vars) {
 		.id = id,
-		.map = {0},
+		.board = {0},
 		.piece = {0},
 		.token = (id == 1 ? 'o' : 'x')
 	};
-	printf("%zu\n", sizeof(vars));
-	//dprintf(1, "%d\n", sizeof(vars));
 	return (vars);
 }
 
 /**
- * An infinite loop whilst the game is running.
+ * An infinite loop whilst the game is running functioning as an event_listener.
  * @param vars
  * @return
  */
@@ -50,7 +47,7 @@ int		event_listener(struct s_vars *vars)
 {
 	while (1)
 	{
-		get_map(&vars->map);
+		get_board(&vars->board);
 		get_piece(&vars->piece);
 		set_piece(vars, input_locator(vars));
 	}

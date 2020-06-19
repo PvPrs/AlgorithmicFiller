@@ -13,6 +13,12 @@
 #ifndef FILLER_FILLER_H
 #define FILLER_FILLER_H
 
+/**
+** @brief
+** Prototypes of function declaration that specifies the data types of the function and its arguments.
+** There are non-prototype function declarations that don't specify argument types, but they're obsolescent and there's no reason to use them.)
+*/
+
 struct				s_coords;
 struct				s_vars;
 struct				s_map;

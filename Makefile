@@ -23,7 +23,7 @@ INC					= -I includes -I libft/includes
 
 OBJ					= $(patsubst src/%.c,obj/%.o,$(SRC))
 
-CFLAGS				= -Wall -Werror -Wextra
+CFLAGS				= -Wall -Werror -Wextra -fsanitize=address
 
 all: $(NAME)
 
