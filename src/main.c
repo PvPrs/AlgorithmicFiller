@@ -14,16 +14,19 @@
 #include "../libft/includes/libft.h"
 #include <stdio.h>
 
-/**
+/*
 ** @brief
-** The Virtual Machine 'filler_vm' hands you both the board & piece(4x4 grids) on every turn
-** allowing you to read and set the pieces through stdin.
-** The goal is collect points by placing the highest number of pieces on the board.
- * When the game starts the virtual machine initializes the board with initial tokens.
+** The Virtual Machine 'filler_vm' outputs both a board & piece(4x4 grid) on
+** every turn allowing you to read and set the pieces through stdin. The goal
+** is to collect points by having the highest number of pieces on the board.
+** When the game starts the virtual machine initializes the board with
+** initial tokens.
 ** @rules
-** Only 1 token(single character) of a game piece is mandatory & allowed to overlap with a token on the board.
-** A piece may not exceed the dimensions of the board(this includes the padding of a piece represented by dots).
-** The game stops at the first error: either when a game piece cannot be placed anymore or it has been wrongly placed.
+** Only 1 token(single character) of a game piece is mandatory & allowed to
+** overlap with a token on the board. A piece may not exceed the dimensions
+** of the board(this includes the padding of a piece represented by dots).
+** The game stops at the first error: either when a game piece cannot be
+ * placed anymore or it has been wrongly placed.
 */
 
 static int		game_started()

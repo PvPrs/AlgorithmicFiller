@@ -15,12 +15,12 @@
 
 /**
 ** @brief
- * player.h represents a header file containing the structures and variables
- * of the current specific game state.
+** player.h represents a header file containing the structures and variables
+** of the current specific game state.
 ** @BitField_Explained
- * 	int id : 2;
+** int id : 2;
 ** 		is an integer type of bit size 2.
-** 	unsigned int x : 4,
+** unsigned int x : 4,
 ** 				 y : 4;
 ** 		splits a bit field into two 4 bit fields.
 **
@@ -34,10 +34,14 @@ struct	s_coords
 
 struct s_map
 {
-	struct s_coords coords;
-	char			*map;
+    char			*map;
+    struct s_coords coords;
 };
 
+/**
+ * @struct s_vars represents the game variables.
+ *
+ */
 struct s_vars
 {
 	unsigned int	id : 2;

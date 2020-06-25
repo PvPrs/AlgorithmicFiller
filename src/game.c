@@ -19,15 +19,16 @@
 ** Initializes and allocates the struct variables
 ** required for initialization.
 ** @param id PlayerID(1:2)
-** @Designated_initializer Designated initializers allow members to be initialized by name,
+** @Designated_initializers allow members to be initialized by name,
  * in any order, and without explicitly providing the preceding values.
-** @Compound_Literals Allows you to assign or pass value's by typecasting, required for pointers.
-** to understand the below syntax:
+** @Compound_Literals Allow you to assign or pass value's by typecasting.
+** to understand the below syntax head to:
 ** https://en.wikipedia.org/wiki/C_syntax#Compound_literals
 */
 struct s_vars	*init_game(int id)
 {
 	struct s_vars *vars;
+
 	vars = malloc(sizeof(struct s_vars));
 	*vars = (struct s_vars) {
 		.id = id,
@@ -41,7 +42,7 @@ struct s_vars	*init_game(int id)
 /**
  * An infinite loop whilst the game is running functioning as an event_listener.
  * @param vars
- * @return
+ * @return 1 = won, 0 = loss.
  */
 int		event_listener(struct s_vars *vars)
 {
