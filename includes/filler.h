@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #ifndef FILLER_FILLER_H
-#define FILLER_FILLER_H
+# define FILLER_FILLER_H
 
 /*
 ** @brief
@@ -43,7 +43,7 @@ int					event_listener(struct s_vars *vars);
 ** @param represents a struct containing x,y width and a pointer of type char.
 ** @return allocated and initialized struct containing a 4x4 grid and its size.
 */
-struct s_map		*get_map(struct s_map *board);
+struct s_map		*get_board(struct s_map *board);
 struct s_map		*get_piece(struct s_map *piece);
 
 /*
@@ -54,6 +54,6 @@ struct s_map		*get_piece(struct s_map *piece);
 ** 				0  = Does not fit on current coordinate.
 ** 				1 = success!
 */
-int					set_piece(struct s_vars *vars, struct s_coords *coords);
+int					set_piece(struct s_vars *vars, struct s_coords coords);
 
 #endif

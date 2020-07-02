@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #ifndef FILLER_PLAYER_H
-#define FILLER_PLAYER_H
+# define FILLER_PLAYER_H
 
 /**
 ** @brief
@@ -34,7 +34,7 @@ struct	s_coords
 
 struct s_map
 {
-    char			*map;
+    char			**map;
     struct s_coords coords;
 };
 
@@ -52,4 +52,4 @@ struct s_vars
 
 
 
-#endif //FILLER_PLAYER_H
+#endif

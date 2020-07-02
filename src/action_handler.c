@@ -26,49 +26,63 @@
 ** @param piece
 ** @return
 */
-
 static struct s_coords			*input_locator(struct s_vars *vars)
 {
-    struct s_coords 	*coords;
-    int 				index;
+	struct s_coords 	*coords;
+	int 				row,
+						col;
 
-    index = 0;
-    coords = malloc(sizeof(struct s_coords));
-    if (vars != NULL)
-    {
-        ft_putstr("Missing variables");
-        return (NULL);
-    }
-    while (vars->board.map[index] != NULL)
-    {
-        while (index == vars->board.coords.y ? 0 + vars->piece.coords.y < vars->board.coords.y) // check if Current index + piece width doesn't overlap the map size
-        {
-            while (vars->board.map[index])
-                index++;
-        }
-        index++;
-    }
-    return (coords);
+	row = (col = 0, 0);
+	coords = malloc(sizeof(struct s_coords));
+	if (vars != NULL)
+	{
+		ft_putstr("Missing variables");
+		return (NULL);
+	}
+	while (vars->board.map[row] != NULL)
+	{
+		while (vars->board.map[row][col])
+		{
+			col++;
+		}
+		row++;
+	}
+	return (coords);
 }
 
 /**
- * Places a 'Piece' on the board, at X,Y coordinates returned
- * @see #input_locator
- * @param vars represents a struct of variables representing the game 'Piece'
- * @return		-1 = Error
- * 				0  = Does not fit on current coordinate.
- * 				1 = success!
- * Only one 'token' should overlap a previous token.
- * @warning Take into consideration that the 'dots' are included.
- * 	Example: ..*..
- * 			 ...*.
- * 			 ...*.
-*/
-int				set_piece(struct s_vars *vars)
+ * check_fit checks if a piece fits on the given coordinates.
+ * @param board represents board as a 4x4 grid
+ * @param piece represents a piece as a 4x4 grid
+ * @param x represents the X coordinate
+ * @param y represents the Y coordinate
+ * @return
+ */
+static int check_fit(struct s_map board, struct s_map piece, int x, int y)
 {
-	struct s_coords coords;
+	while(board.)
+	return (1);
+	return (0);
+}
 
-	coords = input_locator(vars);
+/**
+** Puts a 'Piece' on the board, at X,Y coordinates returned
+** @see #input_locator
+** @param vars represents a struct of variables representing the game 'Piece'
+** @return		-1 = Error
+** 				0  = Does not fit on current coordinate.
+** 				1 = success!
+** Only one 'token' should overlap a previous token.
+** @warning Take into consideration that the 'dots' are included.
+** 	Example: ..*..
+** 			 ...*.
+** 			 ...*.
+ * @todo: What might be smart to do, is keep every allocation of every 'piece',
+ *        and point every 'board' coordinate to that specific 'piece' memory
+ *        block.
+*/
+int				set_piece(struct s_vars *vars, struct s_coords coords)
+{
 	if (vars == NULL || coords == NULL)
 		return (0);
 	ft_strcpy(vars->board[coords->x][coords->y], vars->piece);
@@ -76,15 +90,15 @@ int				set_piece(struct s_vars *vars)
 	return (0);
 }
 
-/**
- * Before calling @see #set_piece transform the previous 'Token'
- * Transform the previous lowercase char's to uppercase
- * @param player
- * @param map
- * @return
+/*
+** Before calling @see #set_piece transform the previous 'Token'
+** Transform the previous lowercase char's to uppercase
+** @param player
+** @param map
+** @return
  */
 static char			*transform_piece(char *map)
 {
-    map = NULL;
-    return (NULL);
+		map = NULL;
+		return (NULL);
 }

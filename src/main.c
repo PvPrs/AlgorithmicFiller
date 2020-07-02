@@ -33,7 +33,8 @@ static int		game_started()
 {
 	char *line;
 	if (get_next_line(0, &line) && line && ft_strlen(line) > 10 &&
-		!ft_strncmp(line, "$$$ exec p", 9) && (line[10] == '1' || line[10] == '2'))
+		!ft_strncmp(line, "$$$ exec p", 9) &&
+		(line[10] == '1' || line[10] == '2'))
 	{
 		event_listener(init_game(line[10] == '1' ? 1 : 2));
 	}
